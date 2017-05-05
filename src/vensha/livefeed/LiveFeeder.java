@@ -49,7 +49,7 @@ public void start() {
 
 public static void main(String[] args) throws Exception {
 	if (args.length != 1) {
-		System.out.println("java vneldurg.livefeed.LiveFeeder <cfg file>");
+		System.out.println("java vensha.livefeed.LiveFeeder <cfg file>");
 		System.exit(0);
 	}
 	LiveFeeder feed = new LiveFeeder(args[0]);
