@@ -1,4 +1,4 @@
-package vensha.utils;
+package vensha.livefeed.utils;
 
 import java.io.InputStream;
 import java.net.InetAddress;

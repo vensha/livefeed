@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 
-import vensha.utils.LogManager;
+import vensha.livefeed.utils.LogManager;
 
 public abstract class AbstractDataIngestor implements DataIngestor {
 protected String id_ = null;

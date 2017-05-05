@@ -1,4 +1,4 @@
-package vensha.utils;
+package vensha.livefeed.utils;
 /*
 * An implementaion of Logger that logs to a File
 */

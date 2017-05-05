@@ -14,8 +14,8 @@ import com.google.gson.reflect.TypeToken;
 import vensha.livefeed.AbstractDataIngestor;
 import vensha.livefeed.Entity;
 import vensha.livefeed.EntityManager;
-import vensha.utils.LogManager;
-import vensha.utils.NetUtil;
+import vensha.livefeed.utils.LogManager;
+import vensha.livefeed.utils.NetUtil;
 
 public class HNIngestor extends AbstractDataIngestor {
 private static final String HN_MAX_ID_URL = "https://hacker-news.firebaseio.com/v0/maxitem.json?print=pretty";

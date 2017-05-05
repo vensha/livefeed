@@ -1,4 +1,4 @@
-package vensha.airquality;
+package vensha.livefeed.airquality;
 
 import java.util.HashMap;
 import java.util.Map;

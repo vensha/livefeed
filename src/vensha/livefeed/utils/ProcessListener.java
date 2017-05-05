@@ -1,4 +1,4 @@
-package vensha.utils;
+package vensha.livefeed.utils;
 public interface ProcessListener {
   public void processStarted(Processor p);
   public void processMessage(String line); 

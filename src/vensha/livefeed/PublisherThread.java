@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Properties;
 import java.util.Set;
 
-import vensha.utils.LogManager;
+import vensha.livefeed.utils.LogManager;
 
 @SuppressWarnings("rawtypes")
 public class PublisherThread extends Thread {

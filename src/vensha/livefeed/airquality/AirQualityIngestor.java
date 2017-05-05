@@ -1,4 +1,4 @@
-package vensha.airquality;
+package vensha.livefeed.airquality;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -15,7 +15,7 @@ import org.jsoup.select.Elements;
 import vensha.livefeed.AbstractDataIngestor;
 import vensha.livefeed.Entity;
 import vensha.livefeed.EntityManager;
-import vensha.utils.LogManager;
+import vensha.livefeed.utils.LogManager;
 
 public class AirQualityIngestor extends AbstractDataIngestor {
 private static final String BASE_URL = "http://www.cpcb.gov.in/CAAQM/frmCurrentDataNew.aspx?"; // StationName=Victoria&StateId=29&CityId=300";

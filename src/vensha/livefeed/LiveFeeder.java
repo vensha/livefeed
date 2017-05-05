@@ -5,13 +5,13 @@ import java.util.HashSet;
 import java.util.Properties;
 import java.util.Set;
 
-import vensha.airquality.AirQualityIngestor;
+import vensha.livefeed.airquality.AirQualityIngestor;
 import vensha.livefeed.destinations.DestinationFactory;
 import vensha.livefeed.gcurrencies.CurrencyIngestor;
 import vensha.livefeed.gindices.GlobalIndexIngestor;
 import vensha.livefeed.hn.HNIngestor;
 import vensha.livefeed.rly.RlyDataIngestor;
-import vensha.utils.LogManager;
+import vensha.livefeed.utils.LogManager;
 
 @SuppressWarnings("unused")
 public class LiveFeeder {

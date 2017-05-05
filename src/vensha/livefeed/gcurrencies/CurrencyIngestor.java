@@ -16,7 +16,7 @@ import vensha.livefeed.AbstractDataIngestor;
 import vensha.livefeed.Entity;
 import vensha.livefeed.EntityManager;
 import vensha.livefeed.HeadlessScraper;
-import vensha.utils.LogManager;
+import vensha.livefeed.utils.LogManager;
 
 public class CurrencyIngestor extends AbstractDataIngestor {
 

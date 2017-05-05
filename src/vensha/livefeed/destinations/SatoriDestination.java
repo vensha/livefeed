@@ -7,7 +7,7 @@ import com.satori.rtm.model.Pdu;
 import com.satori.rtm.model.PublishReply;
 
 import vensha.livefeed.Entity;
-import vensha.utils.LogManager;
+import vensha.livefeed.utils.LogManager;
 
 public class  SatoriDestination implements Destination {
 

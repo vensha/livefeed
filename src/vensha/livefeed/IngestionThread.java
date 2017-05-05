@@ -4,7 +4,7 @@ import java.util.Calendar;
 import java.util.Properties;
 import java.util.Set;
 
-import vensha.utils.LogManager;
+import vensha.livefeed.utils.LogManager;
 
 @SuppressWarnings("rawtypes")
 public class IngestionThread extends Thread {

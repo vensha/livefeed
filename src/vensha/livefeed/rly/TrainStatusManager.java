@@ -8,7 +8,7 @@ import com.google.common.cache.CacheBuilder;
 
 import vensha.livefeed.destinations.Destination;
 import vensha.livefeed.destinations.DestinationFactory;
-import vensha.utils.LogManager;
+import vensha.livefeed.utils.LogManager;
 
 public class TrainStatusManager {
 private Cache<String, TrainStatus> cache_;

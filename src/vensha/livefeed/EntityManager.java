@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-import vensha.utils.LogManager;
+import vensha.livefeed.utils.LogManager;
 
 public class EntityManager {
 

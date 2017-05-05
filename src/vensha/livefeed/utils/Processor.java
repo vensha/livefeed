@@ -11,7 +11,7 @@
  * the terms of the license agreement you entered into with Vensha. 
  */
 
-package vensha.utils;
+package vensha.livefeed.utils;
 
 import java.io.*;
 import java.util.Vector; 

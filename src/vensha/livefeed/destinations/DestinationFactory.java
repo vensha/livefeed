@@ -5,7 +5,7 @@ package vensha.livefeed.destinations;
 import java.util.Properties;
 
 import vensha.livefeed.EntityManager;
-import vensha.utils.LogManager;
+import vensha.livefeed.utils.LogManager;
 
 public class DestinationFactory {
 private static Properties props_ = null;

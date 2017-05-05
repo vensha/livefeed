@@ -1,4 +1,4 @@
-package vensha.utils;
+package vensha.livefeed.utils;
 /*
 * An implementaion of Logger that does no logging!! . To turn off all logging, useful for debugging etc
 */   

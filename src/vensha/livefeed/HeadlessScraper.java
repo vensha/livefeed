@@ -4,10 +4,10 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import vensha.utils.BlockingQueue;
-import vensha.utils.LogManager;
-import vensha.utils.ProcessListener;
-import vensha.utils.Processor;
+import vensha.livefeed.utils.BlockingQueue;
+import vensha.livefeed.utils.LogManager;
+import vensha.livefeed.utils.ProcessListener;
+import vensha.livefeed.utils.Processor;
 
 
 public class HeadlessScraper implements ProcessListener {

@@ -4,7 +4,7 @@ import java.util.List;
 
 import vensha.livefeed.destinations.Destination;
 import vensha.livefeed.destinations.DestinationFactory;
-import vensha.utils.LogManager;
+import vensha.livefeed.utils.LogManager;
 
 public class Publisher {
 

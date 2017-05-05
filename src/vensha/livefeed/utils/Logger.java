@@ -1,4 +1,4 @@
-package vensha.utils;
+package vensha.livefeed.utils;
  
 public interface Logger {
  
