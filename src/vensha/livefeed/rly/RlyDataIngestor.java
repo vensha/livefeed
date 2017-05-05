@@ -24,12 +24,12 @@ public RlyDataIngestor() {
 }
 
 @Override
-public List<Entity> ingest(String jsFile, boolean useFileMode) throws Exception {
+public List<Entity> ingest(String res, boolean useFileMode) throws Exception {
 	List<String> contentFiles = null;
 	if (useFileMode == false) { // Live mode
 		LogManager.log("Invoking...");
 		DataFetcher df = new DataFetcher();
-		boolean error = df.fetch(jsFile);
+		boolean error = df.fetch(res);
 		if (error)
 			throw new Exception("Error fetching data");
 		contentFiles = df.getContentFiles();

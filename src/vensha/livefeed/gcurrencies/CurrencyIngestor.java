@@ -25,11 +25,11 @@ public CurrencyIngestor() {
 }
 
 @Override
-public List<Entity> ingest(String jsFile, boolean useFileMode) throws Exception {
+public List<Entity> ingest(String res, boolean useFileMode) throws Exception {
 	List<String> contentFiles = null;
 	if (useFileMode == false) { // Live mode, we wanna scrape
 		DataFetcher df = new DataFetcher();
-		boolean error = df.fetch(jsFile);
+		boolean error = df.fetch(res);
 		if (error)
 			throw new Exception("Error fethcing currencies");
 		contentFiles = df.getContentFiles();
