@@ -94,7 +94,7 @@ private void handleCancellations(String file, List<Entity> list) throws IOExcept
 
 private void handleReschedules(String file, List<Entity> list) throws IOException {
 	LogManager.log("Parsing reschedules");
-	Document doc = Jsoup.parse(new File("/tmp/rly_rescheduled.html"), "utf-8");
+	Document doc = Jsoup.parse(new File(file), "utf-8");
 	Iterator<Element> rows = doc.select("table.allCancelledTrnTbl tr").iterator();
 	while (rows.hasNext()) {
 
