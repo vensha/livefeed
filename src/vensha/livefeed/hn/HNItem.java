@@ -10,7 +10,7 @@ public Map<String,Object> item;
 @Override
 public String getId() {
 	//return ""+item.hashCode();
-	return (String) item.get("id");
+	return ""+item.get("id");
 }
 
 @Override

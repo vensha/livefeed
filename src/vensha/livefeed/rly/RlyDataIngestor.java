@@ -27,13 +27,13 @@ public RlyDataIngestor() {
 public List<Entity> ingest(String jsFile, boolean useFileMode) throws Exception {
 	List<String> contentFiles = null;
 	if (useFileMode == false) { // Live mode
-		LogManager.log("Invoking scraping");
-		DataFetcher scrapper = new DataFetcher();
-		boolean error = scrapper.scrape(jsFile);
+		LogManager.log("Invoking...");
+		DataFetcher df = new DataFetcher();
+		boolean error = df.fetch(jsFile);
 		if (error)
 			throw new Exception("Error fetching data");
-		contentFiles = scrapper.getContentFiles();
-		LogManager.log("scraping done");
+		contentFiles = df.getContentFiles();
+		LogManager.log("done");
 	} else {
 		contentFiles = new ArrayList<>();
 		contentFiles.add("/tmp/rly_cancelled.html");

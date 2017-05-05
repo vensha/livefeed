@@ -28,7 +28,7 @@ public LiveFeeder(String cfgFile) throws Exception {
 	if (props_.getProperty("log.type", "console").equalsIgnoreCase("console")) {
 		LogManager.setCurrentLogger(LogManager.getLogger());
 	} else {
-		LogManager.setCurrentLogger(LogManager.getFileLogger("LiveFeed", "livefeed.log", true));
+		LogManager.setCurrentLogger(LogManager.getFileLogger("LiveFeed", props_.getProperty("logfile"), true));
 	}
 	DestinationFactory.init(props_);
 	EntityManager.init(props_);

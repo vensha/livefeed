@@ -19,7 +19,7 @@ private static String FILE_MARKER = "[ContentFile]";
 private List<String> contentFiles_ = new ArrayList<String>();
 private String fileId_ = null;
 
-public boolean scrape(String resFile) throws Exception {
+public boolean fetch(String resFile) throws Exception {
 	fileId_ = new File(resFile).getName();
 	output_.append("Starting casper on " + resFile);
 	Processor runner = new Processor("casperjs " + resFile, this);

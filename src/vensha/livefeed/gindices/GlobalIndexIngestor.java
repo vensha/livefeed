@@ -26,11 +26,11 @@ public GlobalIndexIngestor() {
 public List<Entity> ingest(String jsFile, boolean useFileMode) throws Exception {
 	List<String> contentFiles = null;
 	if (useFileMode == false) { // Live mode, we wanna scrape
-		DataFetcher scrapper = new DataFetcher();
-		boolean error = scrapper.scrape(jsFile);
+		DataFetcher df = new DataFetcher();
+		boolean error = df.fetch(jsFile);
 		if (error)
 			throw new Exception("Error ingesting global indices data");
-		contentFiles = scrapper.getContentFiles();
+		contentFiles = df.getContentFiles();
 	} else {
 		contentFiles = new ArrayList<>();
 		contentFiles.add("/tmp/gi.html");
