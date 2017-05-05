@@ -7,18 +7,17 @@ import java.util.Set;
 
 import vensha.livefeed.utils.LogManager;
 
-@SuppressWarnings("rawtypes")
 public class PublisherThread extends Thread {
 
 Set<String> entityIds_ = new HashSet<String>();
 Properties cfg_;
 
-public PublisherThread(Set<Class> ingestors, Properties props) {
+public PublisherThread(String[] ingestors, Properties props) {
 	cfg_ = props;
-	for (Class ingestor : ingestors) {
+	for (String ingestor : ingestors) {
 		AbstractDataIngestor di;
 		try {
-			di = (AbstractDataIngestor) ingestor.newInstance();
+			di = (AbstractDataIngestor) Class.forName(ingestor).newInstance();
 			entityIds_.add(di.id_);
 		} catch (Exception e) {
 			LogManager.log(e);

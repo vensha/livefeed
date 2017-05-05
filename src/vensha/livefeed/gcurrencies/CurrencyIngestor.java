@@ -15,7 +15,7 @@ import org.jsoup.nodes.Element;
 import vensha.livefeed.AbstractDataIngestor;
 import vensha.livefeed.Entity;
 import vensha.livefeed.EntityManager;
-import vensha.livefeed.HeadlessScraper;
+import vensha.livefeed.DataFetcher;
 import vensha.livefeed.utils.LogManager;
 
 public class CurrencyIngestor extends AbstractDataIngestor {
@@ -28,7 +28,7 @@ public CurrencyIngestor() {
 public List<Entity> ingest(String jsFile, boolean useFileMode) throws Exception {
 	List<String> contentFiles = null;
 	if (useFileMode == false) { // Live mode, we wanna scrape
-		HeadlessScraper scrapper = new HeadlessScraper();
+		DataFetcher scrapper = new DataFetcher();
 		boolean error = scrapper.scrape(jsFile);
 		if (error)
 			throw new Exception("Error fethcing currencies");

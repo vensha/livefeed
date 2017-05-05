@@ -17,9 +17,6 @@ import vensha.livefeed.utils.LogManager;
 public class LiveFeeder {
 private Properties props_ = null;
 
-@SuppressWarnings("rawtypes")
-private Set<Class> ingestors_ = new HashSet<>();
-
 public LiveFeeder(String cfgFile) throws Exception {
 	props_ = new Properties();
 	try {
@@ -38,16 +35,14 @@ public LiveFeeder(String cfgFile) throws Exception {
 	LogManager.log("LiveFeed 1.0 - vneldurg April,2017.");
 }
 
-
-@SuppressWarnings("rawtypes")
-public void start(Class ... ingestors) {
-	for (Class ingestor : ingestors) {
-        ingestors_.add(ingestor);
-    }
-	IngestionThread it = new IngestionThread(ingestors_, props_);
+public void start() {
+	
+	String[] ingestors = props_.getProperty("ingestors").split(",");
+	
+	IngestionThread it = new IngestionThread(ingestors, props_);
 	it.start();
 	
-	PublisherThread pt = new PublisherThread(ingestors_, props_);
+	PublisherThread pt = new PublisherThread(ingestors, props_);
 	pt.start();
 }
 
@@ -58,8 +53,7 @@ public static void main(String[] args) throws Exception {
 		System.exit(0);
 	}
 	LiveFeeder feed = new LiveFeeder(args[0]);
-	feed.start(HNIngestor.class, AirQualityIngestor.class);
-	
+	feed.start();
 }
 
 }

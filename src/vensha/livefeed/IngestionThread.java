@@ -2,17 +2,15 @@ package vensha.livefeed;
 
 import java.util.Calendar;
 import java.util.Properties;
-import java.util.Set;
 
 import vensha.livefeed.utils.LogManager;
 
-@SuppressWarnings("rawtypes")
 public class IngestionThread extends Thread {
 
-Set<Class> ingestors_ = null;
+String[] ingestors_ = null;
 Properties cfg_;
 
-public IngestionThread(Set<Class> ingestors, Properties props) {
+public IngestionThread(String[] ingestors, Properties props) {
 	ingestors_ = ingestors;
 	cfg_ = props;
 
@@ -30,8 +28,8 @@ public void run() {
 
 	while (true) {
 		try {
-			for (Class ingestor : ingestors_) {
-				AbstractDataIngestor di = (AbstractDataIngestor) ingestor.newInstance();
+			for (String ingestor : ingestors_) {
+				AbstractDataIngestor di = (AbstractDataIngestor) Class.forName(ingestor).newInstance();
 				String resources = cfg_.getProperty(di.id_ + ".resources");
 				if (resources != null) {
 					LogManager.log("Ingesting new data for " + di.id_ + " ...");
