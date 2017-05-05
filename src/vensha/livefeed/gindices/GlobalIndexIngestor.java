@@ -81,10 +81,4 @@ private static List<Entity> parseIndices(String file) throws IOException {
 	return list;
 }
 
-public static void main(String[] args) throws Exception {
-	GlobalIndexIngestor s = new GlobalIndexIngestor();
-	List<Entity> list = s.parseIndices("/tmp/gi.html");
-	System.out.println(list.size());
-}
-
 }

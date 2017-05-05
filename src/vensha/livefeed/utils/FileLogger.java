@@ -79,12 +79,4 @@ public String toString() {
 	return baseName_ + "::" + file_;
 }
 
-public static void main(String[] args) throws Exception {
-	FileLogger logger = new FileLogger();
-	logger.init(null);
-	logger.log("[WARN] This is just a test");
-	logger.log("This is another test");
-
-}
-
 }

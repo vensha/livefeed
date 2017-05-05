@@ -64,9 +64,4 @@ private List<Entity> doIngest(int startId, int endId) throws Exception {
 	return list;
 }
 
-public static void main(String[] args) throws Exception {
-	HNIngestor ingestor = new HNIngestor();
-	ingestor.ingest("/tmp/test.properties", false);
-}
-
 }

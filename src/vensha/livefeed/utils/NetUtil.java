@@ -50,10 +50,4 @@ public static InputStream fetchWebStream(String uadd) throws Exception {
 
 }
 
-
-public static void main(String[] args) throws Exception {
-	System.out.println(getIPAddress());
-	System.out.println(getPublicIPAddress());
-}
-
 }
