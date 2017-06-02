@@ -124,5 +124,9 @@ private static void parseTechnicalIndicators(String file, Map<String, Currency> 
 
 }
 
+public static void main(String[] args)  throws Exception {
+	
+}
+
 
 }

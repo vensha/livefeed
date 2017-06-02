@@ -45,7 +45,7 @@ public void log(String msg) {
    timeStamp();
    if (printBase_ )  logWriter_.print(baseName_);
    StackTraceElement[] ste = Thread.currentThread().getStackTrace();
-   logWriter_.println("["+ Thread.currentThread().getName() + "] (" + ste[2].getFileName() + ":" + ste[2].getLineNumber() + ") " +  msg);
+   logWriter_.println("["+ Thread.currentThread().getName() + "] (" + ste[3].getFileName() + ":" + ste[3].getLineNumber() + ") " +  msg);
 }
 
 public void logException(Exception e) {
@@ -78,5 +78,7 @@ public void finalize() throws Throwable {
 public String toString() {
 	return baseName_ + "::" + file_;
 }
+
+
 
 }

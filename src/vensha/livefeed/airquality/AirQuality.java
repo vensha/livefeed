@@ -10,7 +10,7 @@ public String station;
 public String city;
 public String state;
 public String lastUpdated;
-public Map<String,String> parameters = new HashMap<>();
+public Map<String,Map<String,String>> parameters = new HashMap<>();
 
 @Override
 public String getId() {

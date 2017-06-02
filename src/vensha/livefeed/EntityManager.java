@@ -18,6 +18,8 @@ public static final String GLOBAL_INDICES = "gindices";
 public static final String GLOBAL_CURRENCIES = "gcurrencies";
 public static final String INDIA_AIR_QUALITY = "airquality";
 public static final String HN_ITEMS = "hackernews";
+public static final String GOV_TENDERS = "tenders";
+public static final String THUNDER_LIGHTENINING = "thunder";
 
 private static boolean atMostOnce_ = false;
 

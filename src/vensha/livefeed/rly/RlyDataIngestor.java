@@ -27,7 +27,6 @@ public RlyDataIngestor() {
 public List<Entity> ingest(String res, boolean useFileMode) throws Exception {
 	List<String> contentFiles = null;
 	if (useFileMode == false) { // Live mode
-		LogManager.log("Invoking...");
 		DataFetcher df = new DataFetcher();
 		boolean error = df.fetch(res);
 		if (error)

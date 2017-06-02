@@ -69,8 +69,8 @@ public void processMessage(String line) {
 @Override
 public void processComplete(Processor p) {
 
-	LogManager.getCurrentLogger().log("[Fetch]: " + fileId_);
-	LogManager.getCurrentLogger().log(output_.toString());
+	//LogManager.getCurrentLogger().log("[Fetch]: " + fileId_);
+	//LogManager.getCurrentLogger().log(output_.toString());
 
 	if (contentFiles_.size() == 0) {
 		// error_ = true;
