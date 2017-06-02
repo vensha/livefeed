@@ -148,9 +148,7 @@ private static AirQuality createAirQuality(String stationId) throws UnsupportedE
 	String[] sinfo = stationId.split("&");
 	aq.station = URLDecoder.decode(sinfo[0].split("=")[1], "UTF-8");
 	aq.state = stateMap_.get(URLDecoder.decode(sinfo[1].split("=")[1], "UTF-8"));
-	if (aq.state==null) System.out.println("state not found:" + stationId);
 	aq.city = cityMap_.get(URLDecoder.decode(sinfo[2].split("=")[1].trim(), "UTF-8"));
-	if (aq.city==null) System.out.println("city not found:" + stationId);
 	return aq;
 }
 
