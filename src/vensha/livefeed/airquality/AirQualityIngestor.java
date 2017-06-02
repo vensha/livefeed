@@ -113,7 +113,8 @@ public List<Entity> ingest(String stationList, boolean useFileMode) throws Excep
 	String[] stations = stationList.split(",");
 	for (int i = 0; i < stations.length; i++) {
 		try {
-			list.add(parseAirQuality(stations[i]));
+			Entity aq = parseAirQuality(stations[i]);
+			if (!isDuplicate(aq)) list.add(aq);
 		} catch (Exception e) {
 			LogManager.log(e);
 		}
