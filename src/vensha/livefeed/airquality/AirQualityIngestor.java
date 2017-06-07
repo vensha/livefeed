@@ -96,8 +96,6 @@ static {
 	cityMap_.put("555", "Noida");
 	cityMap_.put("556", "Jorapokhar");
 	cityMap_.put("557", "Vijayawara");
-	
-	
 }
 
 public AirQualityIngestor() {
@@ -125,19 +123,22 @@ public List<Entity> ingest(String stationList, boolean useFileMode) throws Excep
 public static Entity parseAirQuality(String stationId) throws IOException {
 	String url = BASE_URL + stationId.trim();
 	Document doc = Jsoup.connect(url).timeout(60 * 1000).get();
+	
 	Element table = doc.select("table").get(1);
+	
+	String lastUpdated = table.select("tr.PreviousDataButtonRow").select("td").first().text().split(":",2)[1];
+	
 	Iterator<Element> trs = table.select("tr[style~=margin]").iterator();
-
+    
+	
 	AirQuality aq = createAirQuality(stationId);
+	aq.lastUpdated = lastUpdated;
 	while (trs.hasNext()) {
 		Elements tds = trs.next().select("td");
-
-		// We get time for every param separately, overwriting it here so that we set last time
 		Map<String,String> param = new HashMap<>();
 		param.put("Measure", tds.get(3).text());
 		param.put("Units", tds.get(4).text());
 		aq.parameters.put(tds.get(0).text(), param);
-		aq.lastUpdated = tds.get(1).text() + " " + tds.get(2).text();
 	}
 	return aq;
 }
@@ -150,6 +151,11 @@ private static AirQuality createAirQuality(String stationId) throws UnsupportedE
 	aq.state = stateMap_.get(URLDecoder.decode(sinfo[1].split("=")[1], "UTF-8"));
 	aq.city = cityMap_.get(URLDecoder.decode(sinfo[2].split("=")[1].trim(), "UTF-8"));
 	return aq;
+}
+
+public static void main(String[] args) throws Exception {
+	AirQualityIngestor ingestor = new AirQualityIngestor();
+	System.out.println(ingestor.parseAirQuality("StationName=Victoria&StateId=29&CityId=300"));
 }
 
 }
